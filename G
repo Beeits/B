@@ -1,0 +1,139 @@
+Here are some essential **Git commands** that every developer should know:
+
+### 1. **git init**
+- Initializes a new Git repository.
+```bash
+git init
+```
+
+### 2. **git clone**
+- Clones a remote repository to your local machine.
+```bash
+git clone <repository-url>
+```
+
+### 3. **git status**
+- Displays the current state of the working directory and staging area.
+```bash
+git status
+```
+
+### 4. **git add**
+- Stages changes (adds files to the staging area).
+```bash
+git add <file-name>      # Add specific file
+git add .                # Add all changes
+```
+
+### 5. **git commit**
+- Commits staged changes to the local repository.
+```bash
+git commit -m "Commit message"  # Commit with a message
+```
+
+### 6. **git log**
+- Displays the commit history.
+```bash
+git log
+```
+
+### 7. **git diff**
+- Shows differences between the working directory and the staging area.
+```bash
+git diff
+```
+
+### 8. **git push**
+- Pushes local commits to a remote repository.
+```bash
+git push <remote> <branch-name>
+```
+
+### 9. **git pull**
+- Fetches and merges changes from a remote repository to the local branch.
+```bash
+git pull <remote> <branch-name>
+```
+
+### 10. **git branch**
+- Lists, creates, or deletes branches.
+```bash
+git branch            # List all branches
+git branch <branch-name>  # Create a new branch
+git branch -d <branch-name>  # Delete a branch
+```
+
+### 11. **git checkout**
+- Switches to another branch or restores files.
+```bash
+git checkout <branch-name>   # Switch branches
+git checkout <file-name>     # Restore a file from a previous commit
+```
+
+### 12. **git merge**
+- Merges changes from one branch into another.
+```bash
+git merge <branch-name>
+```
+
+### 13. **git fetch**
+- Fetches updates from a remote repository but does not merge them.
+```bash
+git fetch
+```
+
+### 14. **git remote**
+- Manages remote repositories.
+```bash
+git remote -v        # Shows remote repositories
+git remote add <name> <url>  # Add a new remote repository
+git remote remove <name>  # Remove a remote
+```
+
+### 15. **git reset**
+- Resets the current branch to a specific state.
+```bash
+git reset <commit-hash>  # Hard reset to a specific commit
+git reset HEAD <file-name>  # Unstage a file
+```
+
+### 16. **git stash**
+- Temporarily stores changes that are not ready to commit.
+```bash
+git stash        # Stash changes
+git stash pop    # Apply and remove the most recent stash
+```
+
+### 17. **git tag**
+- Tags specific points in history as important (often used for releases).
+```bash
+git tag <tag-name>    # Create a new tag
+git tag -d <tag-name> # Delete a tag
+```
+
+### 18. **git rebase**
+- Re-applies commits on top of another base branch.
+```bash
+git rebase <branch-name>
+```
+
+### 19. **git show**
+- Displays detailed information about a commit, object, or reference.
+```bash
+git show <commit-hash>   # Show details of a commit
+```
+
+### 20. **git clean**
+- Removes untracked files from the working directory.
+```bash
+git clean -fd       # Remove untracked files and directories
+```
+
+### Bonus: **git config**
+- Configures Git settings like username, email, etc.
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+These Git commands provide a solid foundation for working with version control in both solo and team-based development projects.
