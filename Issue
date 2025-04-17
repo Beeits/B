@@ -1,0 +1,24 @@
+private void getOrphanInvoices(final PolicyDTO policyDto) {
+    List<Object[]> result = entityManagerCustomRepository.getOrphanInvoices(policyDto.getId());
+
+    List<PolicyInvoiceDTO> orphanList = result.stream()
+            .map(this::mapToPolicyInvoiceDTO)
+            .collect(Collectors.toList());
+
+    policyDto.setOrphanInvoices(orphanList);
+}
+
+private PolicyInvoiceDTO mapToPolicyInvoiceDTO(Object[] res) {
+    PolicyInvoiceDTO dto = new PolicyInvoiceDTO();
+
+    dto.setId(res[1] != null ? Long.valueOf(res[1].toString()) : null);
+    dto.setReference(res[2] != null ? (String) res[2] : null);
+    dto.setIssuanceDate(res[3] != null ? ((Timestamp) res[3]).toLocalDateTime() : null);
+    dto.setTransferToMetierDate(res[4] != null ? ((Timestamp) res[4]).toLocalDateTime() : null);
+    dto.setTotalInvoiceAmtInclTax(res[5] != null ? (BigDecimal) res[5] : null);
+    dto.setStatus(res[0] != null ? InvoiceStatusEnum.valueOf(res[0].toString()) : null);
+    dto.setPaymentSwiftDate(res[7] != null ? ((Timestamp) res[7]).toLocalDateTime() : null);
+    dto.setInvoiceCurrency(res[8] != null ? (String) res[8] : null);
+
+    return dto;
+}
